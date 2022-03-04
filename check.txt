@@ -1,0 +1,13 @@
+           CASH RECEIPT          
+=================================
+Title     Quantity   Price  Total
+---------------------------------
+Jacobs coffee 5       $0,7  $3,5
+Fanta         6       $6,3  $37,8
+Rosse pasta   8       $7,25 $52,2
+Red pepper    1       $0,9  $0,9
+=================================
+TOTAL:                     $84,96
+Promotions(10%)              $5,8
+CardDiscount(0.1)          $9,44
+---------------------------------

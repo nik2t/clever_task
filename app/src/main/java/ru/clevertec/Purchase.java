@@ -1,8 +1,15 @@
-package comp;
+package ru.clevertec;
+
+import lombok.Getter;
+import lombok.Setter;
 
 public class Purchase extends Product{
 
+    @Getter
+    @Setter
     protected int quantity;
+    @Getter
+    @Setter
     protected double totalPrice;
     public Purchase(int id, String name, double price, boolean specialOffer, int quantity, double totalPrice) {
         super(id, name, price, specialOffer);
@@ -10,19 +17,5 @@ public class Purchase extends Product{
         this.totalPrice = totalPrice;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
-    }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 }

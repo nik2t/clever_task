@@ -1,4 +1,4 @@
-package comp;
+package ru.clevertec;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -82,7 +82,7 @@ public class CheckRunner {
 
             if (subStr[0].equals("card")) {
                 for (Card card : cards) {
-                    if (card.CardNumber.equals(subStr[1])) {
+                    if (card.cardNumber.equals(subStr[1])) {
                         cardInfo = card.getDiscount();
                     }
                 }

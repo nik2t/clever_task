@@ -1,4 +1,7 @@
-package comp;
+package ru.clevertec;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,12 +9,26 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Check {
+    @Getter
+    @Setter
     protected ArrayList<Purchase> purchases;
+    @Getter
+    @Setter
     protected double discount = 0.10;
+    @Getter
+    @Setter
     protected int requiredQuantity = 5;
+    @Getter
+    @Setter
     protected double total = 0;
+    @Getter
+    @Setter
     protected double totalDiscount = 0;
+    @Getter
+    @Setter
     protected double cardInfo;
+    @Getter
+    @Setter
     protected double cardDiscount = 0;
 
     public void formation(double cardInfo){
@@ -107,43 +124,5 @@ public class Check {
 
     }
 
-    public ArrayList<Purchase> getPurchases() {
-        return purchases;
-    }
 
-    public void setPurchases(ArrayList<Purchase> products) {
-        this.purchases = products;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public int getRequiredQuantity() {
-        return requiredQuantity;
-    }
-
-    public void setRequiredQuantity(int requiredQuantity) {
-        this.requiredQuantity = requiredQuantity;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public double getTotalDiscount() {
-        return totalDiscount;
-    }
-
-    public void setTotalDiscount(double totalDiscount) {
-        this.totalDiscount = totalDiscount;
-    }
 }

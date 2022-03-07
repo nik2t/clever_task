@@ -1,8 +1,13 @@
-package comp;
+package ru.clevertec;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 
 public class Products {
+    @Getter
+    @Setter
     protected ArrayList<Product> products ;
 
     public Products() {

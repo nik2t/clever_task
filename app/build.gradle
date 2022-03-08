@@ -33,13 +33,7 @@ dependencyManagement {
 }
 
 build {
-    dependsOn 'downloadCheck'
-}
-
-
-task downloadCheck(type: SourcesDownloader){
-    sourceUrl = 'https://github.com/nik2t/testCheck.git'
-    file = new File('oldCheck.txt')
+    dependsOn "downloadCheck"
 }
 
 
@@ -48,7 +42,6 @@ dependencies {
     testImplementation 'junit:junit'
     implementation 'com.google.guava:guava:30.1.1-jre'
     implementation group: 'com.github.livesense', name: 'org.liveSense.fragment.sun.security', version: '1.0.5'
-
 
 }
 
@@ -80,15 +73,15 @@ sourceSets{
     }
 }
 
-class SourcesDownloader extends DefaultTask{
-    @Input
-    String sourceUrl
+class SourcesDownloader implements Plugin<Project>{
 
-    @OutputFile
-    File file
-    @TaskAction
-    void download(){
-        try{
+    @Override
+    void apply(Project project) {
+        project.task("downloadCheck") {
+            description 'Download from the repository of the old check.'
+
+            String sourceUrl = 'https://github.com/nik2t/testCheck.git'
+            File file = new File('oldCheck.txt')
 
             Process proc = Runtime.getRuntime().exec("git clone "+ sourceUrl);
             proc.waitFor();
@@ -101,8 +94,9 @@ class SourcesDownloader extends DefaultTask{
             proc.destroy();
 
         }
-        catch (Exception e){
-            println e;
-        }
     }
 }
+
+
+apply plugin: SourcesDownloader
+

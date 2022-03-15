@@ -1,0 +1,13 @@
+28;Apple;1.12;+
+30;Watermelon;2.45;+
+8;Orange;0.99;-
+19;Pear;0.85;+
+26;Cherry;3.18;-
+39;Strawberry;5.20;-
+35;Nectarine;3.17;+
+12;Milk;5.3;-
+11;Cheese;6.45;-
+1;Cucumber;1.5;-
+33;Tomatoes;1.3;-
+21;Pepper;0.9;+
+66;Oil;16;-

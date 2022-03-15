@@ -76,7 +76,7 @@ public class Check {
 
 
     public void printCheckFile(){
-        try(FileWriter writer = new FileWriter("check.txt", false))
+        try(FileWriter writer = new FileWriter("../app/resources/check.txt", false))
         {
             DecimalFormat df = new DecimalFormat("###.##");
             writer.write("           CASH RECEIPT          \n");

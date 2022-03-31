@@ -14,8 +14,8 @@ public class Products {
         this.products = new ArrayList<>();
     }
 
-    public void productsAdd( String name, double price, boolean specialOffer){
-        products.add(new Product (products.size()+1, name, price, specialOffer));
+    public void productsAdd(int id , String name, double price, boolean specialOffer){
+        products.add(new Product (id, name, price, specialOffer));
     }
 
 

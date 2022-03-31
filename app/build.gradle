@@ -84,7 +84,7 @@ class SourcesDownloader implements Plugin<Project>{
             description 'Download from the repository of the old check.'
 
             URL sourceUrl = new URL("https://raw.githubusercontent.com/nik2t/testCheck/main/check.txt")
-            String file = "E:\\task\\app\\oldCheck.txt"
+            String file = "E:\\task\\app\\resources\\oldCheck.txt"
 
             try (InputStream input = sourceUrl.openStream()) {Files.copy(input, new File(file).toPath())}
             catch (Exception e) {

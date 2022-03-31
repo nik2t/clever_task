@@ -1,4 +1,4 @@
-package comp;
+package ru.clevertec;
 
 public class MyException extends Exception {
 

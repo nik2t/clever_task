@@ -1,3 +1,7 @@
-.idea/
-.gradle/
-build/
+# Ignore Gradle project-specific cache directory
+.gradle
+.idea
+# Ignore Gradle build output directory
+build
+app/oldCheck.txt
+

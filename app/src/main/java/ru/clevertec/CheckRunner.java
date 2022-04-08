@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CheckRunner {
@@ -13,20 +12,20 @@ public class CheckRunner {
 
     public static void main(String[] args) throws MyException, IOException {
 
-        //args = new String[]{"4-5", "2-6", "3-8", "12-1", "card-1234"};   //initial data options
+
         args = new String[]{"../app/resources/test.txt"};
         String info = "../app/resources/info.txt";
         cleanInvalidData();
 
         Products products = new Products();
-        ArrayList<Card> cards = new ArrayList<Card>();
+        CustomArrayList<Card> cards = new CustomArrayList<Card>();
         cards.add(new Card(0.03, "1234"));
         cards.add(new Card(0.07, "1423"));
         cards.add(new Card(0.1, "1010"));
-        ArrayList<Purchase> purchases = new ArrayList<Purchase>();
+        CustomArrayList<Purchase> purchases = new CustomArrayList<Purchase>();
 
 
-        ArrayList<String[]> strList = firstReader(info, 0);
+        CustomArrayList<String[]> strList = firstReader(info, 0);
         for (String[] strL : strList) {
             boolean bCounter = false;
             if (strL[3].equals("+")) {
@@ -35,7 +34,7 @@ public class CheckRunner {
             products.productsAdd(Integer.parseInt(strL[0]), strL[1], Double.valueOf(strL[2]), bCounter);
         }
 
-        ArrayList<String[]> strListTest = firstReader(args[0], 1);
+        CustomArrayList<String[]> strListTest = firstReader(args[0], 1);
 
         for (Card card : cards) {
             if (card.cardNumber.equals(curdNumb)) {
@@ -59,13 +58,13 @@ public class CheckRunner {
         check.printCheck();
         check.printCheckFile();
 
-
+        testMethod();
     }
 
-    public static ArrayList<String[]> firstReader(String file, int counter) throws FileNotFoundException {
+    public static CustomArrayList<String[]> firstReader(String file, int counter) throws FileNotFoundException {
 
         String str;
-        ArrayList<String[]> list = new ArrayList<String[]>();
+        CustomArrayList<String[]> list = new CustomArrayList<String[]>();
         FileReader reader = new FileReader(file);
         Scanner scanner = new Scanner(reader);
         while (scanner.hasNextLine()) {
@@ -104,6 +103,36 @@ public class CheckRunner {
             e.printStackTrace();
         }
         writer.write("");
+    }
+
+    public static void testMethod(){
+        String[] arr = new String[]{"first", "second", "third"};
+        CustomLinkedList<String> list = new CustomLinkedList<>();
+        list.addAll(arr);
+        System.out.println(list.find("second"));
+        System.out.println(list.get(0));
+        System.out.println(list.set(1, "world"));
+        System.out.println(list.remove(1));
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add("test");
+        list.add(null);
+        list.add(null);
+        list.trim();
+        list.printLinkList();
+        Iterator<String> iterator = list.iterator();
+        iterator.next();
+        iterator.next();
+        iterator.remove();
+        iterator.addBefore("wwwwwww");
+        iterator.next();
+        iterator.addAfter("hahaha");
+        iterator = list.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        list.printLinkList();
     }
 
 }

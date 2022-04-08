@@ -6,12 +6,11 @@ import lombok.Setter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 public class Check {
     @Getter
     @Setter
-    protected ArrayList<Purchase> purchases;
+    protected CustomArrayList<Purchase> purchases;
     @Getter
     @Setter
     protected double discount = 0.10;
@@ -35,17 +34,17 @@ public class Check {
         this.cardInfo = cardInfo;
         for(Purchase product : purchases){
             if(product.specialOffer && product.quantity >= requiredQuantity){
-                    totalDiscount +=  purchases.get(purchases.indexOf(product)).totalPrice * discount;
-                    purchases.get(purchases.indexOf(product)).totalPrice = purchases.get(purchases.indexOf(product)).totalPrice*(1 - discount);
+                    totalDiscount +=  purchases.get(purchases.find(product)).totalPrice * discount;
+                    purchases.get(purchases.find(product)).totalPrice = purchases.get(purchases.find(product)).totalPrice*(1 - discount);
             }
-            total += purchases.get(purchases.indexOf(product)).totalPrice;
+            total += purchases.get(purchases.find(product)).totalPrice;
         }
         cardDiscount = total * cardInfo;
         total -= cardDiscount;
 
 
     }
-    public Check(ArrayList<Purchase> purchases, double cardInfo) {
+    public Check(CustomArrayList<Purchase> purchases, double cardInfo) {
         this.purchases = purchases;
         formation(cardInfo);
     }

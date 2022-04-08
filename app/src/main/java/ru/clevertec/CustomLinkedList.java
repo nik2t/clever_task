@@ -35,7 +35,7 @@ public class CustomLinkedList<T> implements List<T>{
 
     @Override
     public CustomLinkedIterator<T> iterator() {
-        return new CustomLinkedIterator<>();
+        return new CustomLinkedIterator<T>();
     }
 
     @Override
@@ -70,7 +70,7 @@ public class CustomLinkedList<T> implements List<T>{
     public void printLinkList(){
         Node<T> p;
         for(p = fstNode; p!=null; p=p.getNext()){
-            System.out.print(p.item+"--->");
+            System.out.print(p.item+"-><-");
         }
         System.out.println();
     }
@@ -221,7 +221,7 @@ public class CustomLinkedList<T> implements List<T>{
         @Override
         public void addBefore(T element) {
             if(pointer != fstNode) {
-                Node<T> counter = new Node<>(element, pointer.getPrev(), pointer);
+                Node<T> counter = new Node<T>(element, pointer.getPrev(), pointer);
                 pointer.getPrev().setNext(counter);
                 pointer.setPrev(counter);
                 setSize(getSize() + 1);
@@ -234,7 +234,7 @@ public class CustomLinkedList<T> implements List<T>{
         @Override
         public void addAfter(T element) {
             if(pointer != fstNode) {
-                Node<T> counter = new Node<>(element, pointer, pointer.getNext());
+                Node<T> counter = new Node<T>(element, pointer, pointer.getNext());
                 pointer.getNext().setPrev(counter);
                 pointer.setNext(counter);
                 setSize(getSize() + 1);

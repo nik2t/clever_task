@@ -58,35 +58,7 @@ public class CheckRunner {
         check.printCheck();
         check.printCheckFile();
 
-        String[] arr = new String[]{"first", "second", "third"};
-        CustomLinkedList<String> list = new CustomLinkedList<>();
-        list.addAll(arr);
-        System.out.println(list.find("second"));
-        System.out.println(list.get(0));
-        System.out.println(list.set(1, "world"));
-        System.out.println(list.remove(1));
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add("test");
-        list.add(null);
-        list.add(null);
-        list.trim();
-        list.printLinkList();
-        Iterator<String> iterator = list.iterator();
-        iterator.next();
-        iterator.next();
-        iterator.remove();
-        iterator.addBefore("wwwwwww");
-        iterator.next();
-        iterator.addAfter("hahaha");
-        iterator = list.iterator();
-        while(iterator.hasNext()){
-            System.out.println(iterator.next());
-        }
-        list.printLinkList();
-
-
+        testMethod();
     }
 
     public static CustomArrayList<String[]> firstReader(String file, int counter) throws FileNotFoundException {
@@ -131,6 +103,36 @@ public class CheckRunner {
             e.printStackTrace();
         }
         writer.write("");
+    }
+
+    public static void testMethod(){
+        String[] arr = new String[]{"first", "second", "third"};
+        CustomLinkedList<String> list = new CustomLinkedList<>();
+        list.addAll(arr);
+        System.out.println(list.find("second"));
+        System.out.println(list.get(0));
+        System.out.println(list.set(1, "world"));
+        System.out.println(list.remove(1));
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add("test");
+        list.add(null);
+        list.add(null);
+        list.trim();
+        list.printLinkList();
+        Iterator<String> iterator = list.iterator();
+        iterator.next();
+        iterator.next();
+        iterator.remove();
+        iterator.addBefore("wwwwwww");
+        iterator.next();
+        iterator.addAfter("hahaha");
+        iterator = list.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        list.printLinkList();
     }
 
 }

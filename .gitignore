@@ -3,5 +3,7 @@
 .idea
 # Ignore Gradle build output directory
 build
-app/oldCheck.txt
+app/resources/oldCheck.txt
+app/resources/invalidData.txt
+app/resources/check.txt
 

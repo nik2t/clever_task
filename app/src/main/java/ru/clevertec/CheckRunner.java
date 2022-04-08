@@ -13,7 +13,7 @@ public class CheckRunner {
 
     public static void main(String[] args) throws MyException, IOException {
 
-        //args = new String[]{"4-5", "2-6", "3-8", "12-1", "card-1234"};   //initial data options
+
         args = new String[]{"../app/resources/test.txt"};
         String info = "../app/resources/info.txt";
         cleanInvalidData();
@@ -59,6 +59,25 @@ public class CheckRunner {
         check.printCheck();
         check.printCheckFile();
 
+
+        String[] arr = new String[]{"dream", "pool", "red", null, "pleases"};
+        //Integer[] arr = new Integer[]{1000, 930, 123, 68, 14};
+        CustomArrayList<String> list = new CustomArrayList<>(arr);
+        CustomArrayIterator<String> iterator = list.iterator();
+        for(String elem : list){
+            System.out.println(elem);
+        }
+        System.out.println("_________________");
+        list.add("hello");
+        list.remove(3);
+        list.set(2, "HELSIIDJ");
+        System.out.println("hello -> index: " + list.find("hello"));
+
+
+
+        for(String elem : list){
+            System.out.println(elem);
+        }
 
     }
 

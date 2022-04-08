@@ -1,6 +1,6 @@
 package ru.clevertec;
 
-public class CustomArrayIterator<T> implements Iterator<T>, java.util.Iterator<T> {
+public class CustomArrayIterator<T> implements Iterator<T> {
 
         private int index = 0;
         private T[] array;

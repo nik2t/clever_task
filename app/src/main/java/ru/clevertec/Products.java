@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class Products {
     @Getter
     @Setter
-    protected ArrayList<Product> products ;
+    protected CustomArrayList<Product> products ;
 
     public Products() {
-        this.products = new ArrayList<>();
+        this.products = new CustomArrayList<>();
     }
 
     public void productsAdd(int id , String name, double price, boolean specialOffer){

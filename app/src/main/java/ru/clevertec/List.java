@@ -1,7 +1,9 @@
 package ru.clevertec;
 
+
+
 public interface List <T> extends Iterable<T>{
-    CustomArrayIterator<T> iterator();
+    Iterator<T> iterator();
     void setMaxSize(int maxSize);
     void add( T element);
     void addAll(T[] array);

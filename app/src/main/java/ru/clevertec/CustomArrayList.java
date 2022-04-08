@@ -12,14 +12,7 @@ public class CustomArrayList<T> implements List<T>{
     public CustomArrayList(T[] array){
         addAll(array);
     }
-    public CustomArrayList(){
-        try {
-            array = (T[]) new Object();
-        }
-        catch (ClassCastException e){
-            e.printStackTrace();
-        }
-    }
+    public CustomArrayList(){ }
 
 
     @Override

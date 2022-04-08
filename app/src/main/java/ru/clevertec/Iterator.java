@@ -1,6 +1,6 @@
 package ru.clevertec;
 
-public interface Iterator <T>{
+public interface Iterator <T> extends java.util.Iterator<T> {
 
     T next();
     boolean hasNext();
